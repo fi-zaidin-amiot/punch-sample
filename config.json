@@ -1,0 +1,22 @@
+{
+	"template_dir": "source", 
+	"content_dir": "contents",
+	"output_dir": "deploy",
+
+	"server": { 
+		"port": 8080
+	},
+	"bundles": {
+		"/css/all.css": [
+			"/css/normalize.css",	
+			"/css/main.css",
+			"/css/site.sass"
+		]	
+	},
+	"plugins": {
+        "template_engine": "punch-engine-handlebars",
+		"compilers": {
+        	".css": "ruby-sass-compiler" 
+    	}
+    }
+}

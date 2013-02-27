@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+var path = require("path"),
+  fs = require("fs"),
+  filename = path.join(__dirname,'node_modules/punch/lib/cli.js');
+
+fs.exists(filename, function(exists) {
+  if(exists){
+    var cli = require(filename);
+
+    var args = process.argv.slice(2);
+    cli.init(args);
+  } else {
+    console.log('Punch not found. Run `npm install` first.')
+  }
+});
